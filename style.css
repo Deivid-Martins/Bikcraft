@@ -1,3 +1,35 @@
+:root {
+    --background-color: rgb(235, 235, 235);
+    --container-background-color: white;
+    --container-background-color-hover: rgb(190, 190, 190);
+    --box-shadow: rgba(0, 0, 0, 0.1);
+    --text-color: black;
+    --button-background: red;
+    --button-background-hover: rgb(255, 109, 109);
+    --button-text-color: white;
+    --button-box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.5), 0px 0px 10px rgba(255, 0, 0, 0.5);
+    --vantagens-color: rgb(220, 220, 220);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: rgb(35, 35, 35);
+        --container-background-color: rgb(45, 45, 45);
+        --container-background-color-hover: rgb(40, 40, 40);
+        --box-shadow: rgba(0, 0, 0, 0.1);
+        --text-color: white;
+        --button-background: rgb(255, 59, 59);
+        --button-background-hover: rgb(225, 49, 49);
+        --button-text-color: white;
+        --button-box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.5), 0px 0px 10px rgba(255, 0, 0, 0.5);
+        --vantagens-color: rgb(26, 26, 26);
+    }
+
+    header img {
+        filter: invert(1);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +38,7 @@
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: rgb(235, 235, 235);
+    background-color: var(--background-color);
 }
 
 header {
@@ -34,23 +66,23 @@ header ul li a{
     padding: 10px 20px;
     text-decoration: none;
     text-transform: uppercase;
-    background-color: white;
+    background-color: var(--container-background-color);
     border-radius: 8px;
-    color: black;
+    color: var(--text-color);
     font-weight: 600;
     transition: ease-out 0.2s;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px var(--box-shadow);
 }
 
 header ul li a:hover {
-    background-color: rgb(190, 190, 190);
+    background-color: var(--container-background-color-hover);
 }
 
 main {
-    background-color: white;
+    background-color: var(--container-background-color);
     margin: 0 5dvw;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 10px var(--box-shadow);
 }
 
 .produto {
@@ -64,6 +96,7 @@ main {
     gap: 20px;
     text-align: end;
     padding: 50px;
+    color: var(--text-color);
 }
 
 .produto aside h2 {
@@ -79,23 +112,23 @@ main {
 
 .produto aside a {
     text-decoration: none;
-    color: white;
+    color: var(--button-text-color);
     font-weight: 600;
     padding: 10px 20px;
     justify-self: end;
-    background-color: red;
+    background-color: var(--button-background);
     border-radius: 10px;
-    box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.5), 0px 0px 10px rgba(255, 0, 0, 0.5);
+    box-shadow: var(--button-box-shadow);
     transition: ease-out 0.3s;
 }
 
 .produto aside a:hover {
-    background-color: rgb(255, 109, 109);
+    background-color: var(--button-background-hover);
     transform: scale(105%);
 }
 
 .produto img {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 10px var(--box-shadow);
     border-radius: 10px;
     display: block;
     max-width: 100%;
@@ -113,7 +146,7 @@ main {
     text-align: right;
     align-self: center;
     margin-right: 20px;
-    color: rgb(220, 220, 220);
+    color: var(--vantagens-color);
     max-width: 50ch;
 }
 
@@ -128,15 +161,20 @@ main {
     gap: 10px;
     padding: 20px;
     transition: ease-in-out 0.1s;
+    color: var(--text-color);
 }
 
 .vantagens ul li:nth-child(odd) {
-    background-color: rgb(235, 235, 235);
+    background-color: var(--vantagens-color);
+}
+
+.vantagens ul li:nth-child(even) {
+    background-color: var(--container-background-color);
 }
 
 .vantagens ul li:hover {
-    border-left: 5px solid red;
-    background-color: rgb(172, 172, 172);
+    border-left: 5px solid var(--button-background);
+    background-color: var(--container-background-color-hover);
 }
 
 .vantagens ul li img {
@@ -158,9 +196,9 @@ main {
 footer {
     margin-top: 20px;
     padding: 20px;
-    background-color: white;
+    background-color: var(--container-background-color);
     text-align: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px var(--box-shadow);
     border-radius: 20px 20px 0px 0px;
 }
 
@@ -169,16 +207,16 @@ footer p {
 }
 
 footer a {
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
-    background-color: rgb(220, 220, 220);
+    background-color: var(--background-color);
     padding: 5px 10px;
     border-radius: 5px;
     transition: ease-in-out 0.2s;
 }
 
 footer a:hover {
-    background-color: gray;
+    background-color: var(--container-background-color-hover);
 }
 
 @media (max-width: 768px) {
